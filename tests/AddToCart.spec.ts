@@ -12,19 +12,21 @@ let homePage:HomePage;
 let page: Page;
 let cartDetails:CartDetails ;
 let cartItem:CartItem;
+let browser:Browser;
+let context:BrowserContext 
 const userName = process.env.USERNAME;
 const password = process.env.PASSWORD;
 
-test.describe('',async ()=>{
+test.describe('This is add to Cart tests',async ()=>{
     test.beforeEach('This is a before each method',async()=>{
-        let browser:Browser = await invokeBrowser()
-        let context:BrowserContext = await browser.newContext();
+        browser = await invokeBrowser()
+        context = await browser.newContext();
         page = await context.newPage();
-        await page.goto(process.env.APPURL!);
+        await page.goto(process.env.APPURL);
         homePage = new HomePage(page);
         await homePage.clickOnLoginButton();
         loginPage = new LoginPage(page);
-        await loginPage.loginToApp(userName!,password!);
+        await loginPage.loginToApp(userName,password);
     })
 
     test('Add to Cart', async()=>{
