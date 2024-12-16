@@ -27,7 +27,7 @@ test.describe('',async ()=>{
         await loginPage.loginToApp(userName!,password!);
     })
 
-    test.only('Add to Cart', async()=>{
+    test('Add to Cart', async()=>{
         for(const book of books.Books){
             await homePage.addToCart(book.BookName);
             const bkPrice = await homePage.getPriceOfItem(book.BookName);
