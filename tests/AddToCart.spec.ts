@@ -17,7 +17,7 @@ let context:BrowserContext
 const userName = process.env.USERNAME;
 const password = process.env.PASSWORD;
 
-test.describe('This is add to Cart tests',async ()=>{
+test.describe('@smoke,@Regression This is add to Cart tests',async ()=>{
     test.beforeEach('This is a before each method',async()=>{
         browser = await invokeBrowser()
         context = await browser.newContext();

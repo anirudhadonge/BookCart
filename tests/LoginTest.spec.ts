@@ -13,7 +13,7 @@ let context:BrowserContext
 const userName = process.env.USERNAME;
 const password = process.env.PASSWORD;
 
-test.describe('This is a login test description',async()=>{
+test.describe('@Regression This is a login test description',async()=>{
     
 test.beforeEach('This is a before each method',async()=>{
         browser = await invokeBrowser()
